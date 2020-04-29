@@ -12,6 +12,13 @@ Useful graphql queries for India. [Worldwide queries can be found here](https://
 country(name: ID!): Country # Pass "India" as the country name
 state(countryName: ID!, stateName: ID!): State # Pass "India" as the country name and the state name you want
 ```
+## Can be used with any REST api framework
+Graphql is also supported in any rest client
+1. axios - NodeJS and Broswer - [Example](https://medium.com/@stubailo/how-to-call-a-graphql-server-with-axios-337a94ad6cf9)
+2. Android - Apollo client - [Example](https://github.com/apollographql/apollo-android)
+3. iOS - Apollo client - [Example](https://www.apollographql.com/docs/ios/)
+4. [Other supported languages](https://www.apollographql.com/docs/)
+
 ### Few examples
 Open Graphql playground https://covidstat.info/graphql
 #### 1. To get no of cases for all states
