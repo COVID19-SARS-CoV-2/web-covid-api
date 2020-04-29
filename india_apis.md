@@ -7,7 +7,7 @@ Covidstats provides Graphql API's, you can find the detailed schema [here](https
 ### Graphql Endpoint - https://covidstat.info/graphql
 
 ## Graphql Queries 
-Here are the current possible queries
+Useful graphql queries for India. [Worldwide queries can be found here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/blob/master/README.md#apis)
 ```graphql
 country(name: ID!): Country # Pass "India" as the country name
 state(countryName: ID!, stateName: ID!): State # Pass "India" as the country name and the state name you want
@@ -61,7 +61,7 @@ query {
   country(name: "India") {
     states {
       state
-			districts {
+      districts {
         district
         cases
         todayCases
@@ -106,9 +106,65 @@ query {
   }
 }
 ```
+#### 6. Complete dump of all data 
+```graphql
+query {
+  country(name: "india") {
+    country
+    updated
+    countryInfo {
+      _id
+      iso2
+      iso3
+      lat
+      long
+      flag
+    }
+    cases
+    todayCases
+    deaths
+    todayDeaths
+    recovered
+    tests
+    historical {
+      date
+      cases
+      deaths
+      recovered
+    }
+    states {
+      state
+      cases
+      todayCases
+      todayDeaths
+      tests
+      active
+      updated
+      districts {
+        district
+        cases
+        todayCases
+        deaths
+        todayDeaths
+        recovered
+        todayRecovered
+        active
+      }
+    }
+    historical {
+      date
+      cases
+      deaths
+      recovered
+    }
+  }
+}
+```
 
-### FAQ's
-1. asdfasdf
-- asdfasdf
-2. asdf
-- asdfsd
+_Historic data for state is not available at the moment. If you want that data [please create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) we will do our best to process it_
+
+_Raw & resource data is also not present on the system. [Create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) if you want that in graphql_
+
+### Notes
+1. **All the data above are processed from [covid19india apis](https://github.com/covid19india/api#json)**
+2. **Data is refreshed every 3 mins**
