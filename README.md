@@ -37,6 +37,8 @@ state(countryName: ID!, stateName: ID!): State
 
 **PS: State information is currently available only for India and USA**
 
+**India specific API's can be found [here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/blob/master/india_apis.md)**
+
 We are constantly expanding our data. If you need any customized graphql query [create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) we are happy to help 
 
 You can also contribute by yourself. Please [create an issue here](https://github.com/COVID19-SARS-CoV-2/web/issues/new) we will give access to the source code 
