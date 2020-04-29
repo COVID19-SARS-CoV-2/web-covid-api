@@ -76,6 +76,25 @@ type Country {
   continent: String
   "List of the states in that Country"
   states: [State]
+  "Get historic cases for the country"
+  historical: [Historic]
+}
+
+type Historic {
+  "Date"
+  date: String
+  "Number of cases on the day"
+  cases: Int
+  "Number of deaths on the day"
+  deaths: Int
+  "Number of recovered on the day"
+  recovered: Int
+  "Today cases. This data is available only for India"
+  todayCases: Int
+  "Today recovered. This data is available only for India"
+  todayRecovered: Int
+  "Today deaths. This data is available only for India"
+  todayDeaths: Int
 }
 
 type CountryMeta {
