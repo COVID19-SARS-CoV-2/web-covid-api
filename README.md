@@ -33,7 +33,7 @@ states(countryName: ID!): [State]
 state(countryName: ID!, stateName: ID!): State
 ```
 
-**Historical data soon to be available**
+**Historical data comes from jhu processor**
 
 **PS: State information is currently available only for India and USA**
 
