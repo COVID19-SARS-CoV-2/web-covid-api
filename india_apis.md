@@ -172,6 +172,8 @@ _Historic data for state is not available at the moment. If you want that data [
 
 _Raw & resource data is also not present on the system. [Create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) if you want that in graphql_
 
+**PS: Variable names, will be different from what you see in covid19india, all the variable names will follow the [NovelCOVIDAPI](https://github.com/NovelCOVID/API) standards**
+
 ### Notes
 1. **All the data above are processed from [covid19india apis](https://github.com/covid19india/api#json)**
 2. **Data is refreshed every 3 mins**
