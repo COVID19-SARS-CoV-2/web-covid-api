@@ -97,7 +97,7 @@ query {
   }
 }
 ```
-#### 5. Get historic data 
+#### 5. Get historic data for India
 ```graphql
 query {
   country(name: "India") {
@@ -113,7 +113,86 @@ query {
   }
 }
 ```
-#### 6. Complete dump of all data 
+
+#### 6. Get historic data for State
+```graphql
+# Get historical data for all state
+query {
+  country(name: "India") {
+    states {
+      state
+      historical {
+        date
+        cases
+        deaths
+        recovered
+        todayCases
+        todayRecovered
+        todayDeaths
+      }
+    }
+  }
+}
+
+or
+
+# Get historical data for a particular state
+query {
+  state(countryName: "India", stateName: "Tamil Nadu") {
+    state
+    historical {
+      date
+      cases
+      deaths
+      recovered
+      todayCases
+      todayRecovered
+      todayDeaths
+    }
+  }
+}
+```
+
+#### 7. Get historic data for district
+```graphql
+# Get historical for all districts in all states
+query {
+  country(name: "India") {
+    states {
+      state
+      districts {
+        district
+        historical {
+          date
+          cases
+          deaths
+          recovered
+        }
+      }
+    }
+  }
+}
+
+or
+
+# Get historical for all districts in a particular state
+query {
+  state(countryName: "India", stateName: "Tamil Nadu") {
+    state
+    districts {
+      district
+      historical {
+        date
+        cases
+        deaths
+        recovered
+      }
+    }
+  }
+}
+```
+
+#### 8. Complete dump of all data 
 ```graphql
 query {
   country(name: "india") {
@@ -156,6 +235,21 @@ query {
         recovered
         todayRecovered
         active
+        historical {
+          date
+          cases
+          deaths
+          recovered
+        }
+      }
+      historical {
+        date
+        cases
+        deaths
+        recovered
+        todayCases
+        todayRecovered
+        todayDeaths
       }
     }
     historical {
@@ -167,8 +261,6 @@ query {
   }
 }
 ```
-
-_Historic data for state is not available at the moment. If you want that data [please create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) we will do our best to process it_
 
 _Raw & resource data is also not present on the system. [Create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) if you want that in graphql_
 
