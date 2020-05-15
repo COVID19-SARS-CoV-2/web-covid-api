@@ -262,6 +262,43 @@ query {
 }
 ```
 
+### Historical filter
+Filters can be applied on any historical data with these parameters
+1. ```count: Int```
+2. ```skip: Int```
+3. ```reverse: Boolean```
+
+#### Examples
+#### 1. Get last 5 days cases for a state
+```graphql
+query {
+  state(countryName: "India", stateName: "Tamil Nadu") {
+    state
+    historical(reverse: true, count: 5) {
+      date
+      cases
+    }
+  }
+}
+```
+
+#### 2. Get previous week data for all districst in a state
+```graphql
+query {
+  state(countryName: "India", stateName: "Tamil Nadu") {
+    state
+    districts {
+      district
+      historical(count: 7, skip: 7, reverse: true) {
+        date
+        cases
+      }
+    }
+  }
+}
+```
+
+
 _Raw & resource data is also not present on the system. [Create an issue here](https://github.com/COVID19-SARS-CoV-2/web-covid-api/issues/new) if you want that in graphql_
 
 **PS: Variable names, will be different from what you see in covid19india, all the variable names will follow the [NovelCOVIDAPI](https://github.com/NovelCOVID/API) standards**
